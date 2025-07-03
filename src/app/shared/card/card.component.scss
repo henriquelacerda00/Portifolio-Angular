@@ -1,6 +1,6 @@
 .card-projeto {
   width: 100%;
-  max-width: 600px; // controla a largura visível
+  max-width: 550px; // controla a largura visível
   background-color: #071c5c;
   border-radius: 12px;
   padding: 2em 3em;
@@ -67,5 +67,39 @@
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-projeto {
+    padding: 1.2em 1.5em;
+    max-width: 100%;
+    margin-bottom: 2em;
+
+    ::ng-deep mat-card-title {
+      font-size: 1.3rem;
+    }
+
+    ::ng-deep mat-card-subtitle {
+      font-size: 1rem;
+    }
+
+    ::ng-deep mat-card-content p {
+      font-size: 0.7rem;
+    }
+
+    ::ng-deep mat-card-actions {
+      justify-content: center;
+      gap: 1.5em;
+    }
+
+    ::ng-deep button[mat-flat-button] {
+      font-size: 0.9rem;
+      padding: 0.5em 1.2em;
+    }
+
+    ::ng-deep img[mat-card-image] {
+      height: 150px; // menor altura da imagem
+    }
   }
 }

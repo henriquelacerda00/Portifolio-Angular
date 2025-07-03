@@ -39,3 +39,46 @@
     transform: translateX(3em); // desliza para a direita
   }
 }
+
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column; // imagem acima do texto
+    align-items: center;
+    gap: 2em;
+    text-align: center;
+
+    img {
+      max-width: 160px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .info-content {
+      gap: 1.2em;
+      padding: 0 1em;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .sub-title {
+        font-size: 20px;
+        margin: 0;
+        justify-content: center;
+        transform: none !important;
+      }
+
+      .paragrafo {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0;
+        text-align: justify;
+      }
+
+      &:hover .sub-title {
+        transform: none;
+      }
+    }
+  }
+}
