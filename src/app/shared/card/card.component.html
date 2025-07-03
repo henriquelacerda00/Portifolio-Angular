@@ -1,0 +1,18 @@
+<mat-card class="card-projeto">
+  <img mat-card-image [src]="imagem" alt="Imagem do projeto" />
+  <mat-card-header>
+    <mat-card-title>{{ titulo }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitulo }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ descricao }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a [href]="linkDeploy" target="_blank">
+      <button mat-flat-button>Vercel</button>
+    </a>
+    <a [href]="linkGithub" target="_blank">
+      <button mat-flat-button>GitHub</button>
+    </a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,19 @@
+<section class="projetos">
+  <h1><strong>PROJETOS:</strong></h1>
+  <div class="container-cards">
+    <div
+      class="linha-card"
+      *ngFor="let card of cards; let i = index"
+      [ngClass]="{ 'alinhado-esquerda': i % 2 === 0, 'alinhado-direita': i % 2 !== 0 }"
+    >
+      <app-card
+        [imagem]="card.imagem"
+        [titulo]="card.titulo"
+        [subtitulo]="card.subtitulo"
+        [descricao]="card.descricao"
+        [linkGithub]="card.linkGithub"
+        [linkDeploy]="card.linkDeploy"
+      ></app-card>
+    </div>
+  </div>
+</section>

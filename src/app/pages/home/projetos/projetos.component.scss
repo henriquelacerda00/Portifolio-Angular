@@ -1,0 +1,39 @@
+.projetos {
+  margin-top: 10vh;
+  text-align: center;
+
+  h1 {
+    font-family: 'Roboto';
+    font-size: 36px;
+    margin-bottom: 5rem;
+    color: rgb(13, 124, 228);
+  }
+
+  .container-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .linha-card {
+    display: flex;
+
+    app-card {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  // novas classes de alinhamento, usadas com [ngClass]
+  .alinhado-esquerda {
+    justify-content: flex-start;
+  }
+
+  .alinhado-direita {
+    justify-content: flex-end;
+  }
+}
