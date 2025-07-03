@@ -1,5 +1,5 @@
 .projetos {
-  margin-top: 10vh;
+  margin-top: 20vw;
   text-align: center;
 
   h1 {
@@ -21,6 +21,7 @@
 
   .linha-card {
     display: flex;
+    width: 100%;
 
     app-card {
       width: auto;
