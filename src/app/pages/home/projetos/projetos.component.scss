@@ -1,12 +1,18 @@
 .projetos {
   margin-top: 20vw;
   text-align: center;
+  scroll-margin-top: 5vw; // Corrige âncora ao clicar
+
+  @media (max-width: 768px) {
+    scroll-margin-top: 56px;
+  }
 
   h1 {
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 36px;
     margin-bottom: 5rem;
     color: rgb(13, 124, 228);
+    margin-top: 5vw;
   }
 
   .container-cards {
@@ -14,7 +20,7 @@
     flex-direction: column;
     gap: 3rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1248px;
     margin: 0 auto;
     padding: 0 2rem;
   }

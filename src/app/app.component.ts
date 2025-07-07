@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { MATERIAL_MODULES } from './shared/material/material-imports';
 import { HeaderComponent } from "./shared/header/header.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,4 +19,7 @@ import { HeaderComponent } from "./shared/header/header.component";
 })
 export class AppComponent {
   title = 'portifolio';
+
+
+
 }

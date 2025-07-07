@@ -12,4 +12,10 @@ import { MATERIAL_MODULES } from '../material/material-imports';
 })
 export class HeaderComponent {
 
+  scrollPara(ancoraId: string){
+    const elemento = document.getElementById(ancoraId);
+    if(elemento){
+      elemento.scrollIntoView({behavior: 'smooth' , block: 'start'});
+    }
+  }
 }

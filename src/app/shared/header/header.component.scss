@@ -4,7 +4,13 @@ mat-toolbar {
   padding: 0 3%;
   background-color: #040c24;
   border-bottom: solid 0.5px white;
-  margin-bottom: 15vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px; // altura fixa
+  z-index: 1000;
+
   .logo {
     display: flex;
     align-items: center;
@@ -16,23 +22,22 @@ mat-toolbar {
       display: flex;
       align-items: center;
       justify-content: center;
-
       line-height: 1;
       vertical-align: middle;
     }
 
-    button{
+    button {
       display: flex;
       align-items: center;
     }
   }
 
-  .container-buttom{
+  .container-buttom {
     display: flex;
     align-items: center;
     gap: 3em;
 
-    .navigation{
+    .navigation {
       display: flex;
       gap: 1em;
     }
@@ -41,11 +46,11 @@ mat-toolbar {
       gap: 0.5em;
       display: flex;
       align-items: center;
+
       .github-button {
         width: 40px;
         height: 40px;
         padding: 1.2em;
-         // opcional
         background-color: rgba(24, 81, 187, 0.08);
         line-height: 0;
 
@@ -54,15 +59,14 @@ mat-toolbar {
           height: 24px;
           object-fit: contain;
         }
-
-
       }
     }
   }
-
 }
+
 @media (max-width: 768px) {
   mat-toolbar {
+    height: 56px; // menor altura no mobile
     padding: 0 1rem;
 
     .logo {
