@@ -28,14 +28,22 @@
   .linha-card {
     display: flex;
     width: 100%;
-    transition: all 0.3s ease;
+
+    /* Efeito 3D */
+    perspective: 1000px;
+
+    justify-content: center;
+    align-items: center;
 
     app-card {
       width: 100%;
       max-width: 600px;
+
+      /* necessário para rotação funcionar corretamente */
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
     }
   }
-
   .alinhado-esquerda {
     justify-content: flex-start;
   }

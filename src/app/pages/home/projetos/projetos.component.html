@@ -1,10 +1,16 @@
 <section class="projetos" id="projetos">
-  <h1><strong>PROJETOS:</strong></h1>
+  <h1
+  [@fadeInUp]="tituloVisivel() ? 'visible' : 'hidden'"
+  (intersection)="ativarAnimacao()"
+  ><strong>PROJETOS:</strong></h1>
   <div class="container-cards">
     <div
       class="linha-card"
       *ngFor="let card of cards; let i = index"
       [ngClass]="{ 'alinhado-esquerda': i % 2 === 0, 'alinhado-direita': i % 2 !== 0 }"
+      intersection
+      (intersection)="ativarAnimacaoCard(i)"
+      [@cardFlipFadeIn]="cardsVisiveis[i]() ? 'visible' : 'hidden' "
     >
       <app-card
         [imagem]="card.imagem"

@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CardComponent } from '../../../shared/card/card.component';
 import { CommonModule } from '@angular/common';
+import { cardFlipFadeIn, fadeInUp } from '../../../shared/animations/animations';
+import { IntersectionDirective } from '../../../shared/directives/intersection.directive';
 
 @Component({
   selector: 'app-projetos',
   standalone: true,
-  imports: [CardComponent, CommonModule],
+  imports: [CardComponent, CommonModule , IntersectionDirective],
   templateUrl: './projetos.component.html',
   styleUrl: './projetos.component.scss',
+  animations: [fadeInUp , cardFlipFadeIn],
 })
 export class ProjetosComponent {
+
+  tituloVisivel = signal(false);
+
   cards = [
     {
       imagem: 'assets/indexa.png',
@@ -47,6 +53,26 @@ export class ProjetosComponent {
       linkGithub: 'https://github.com/henriquelacerda00/Angular-ListaTarefas',
       linkDeploy: 'https://angular-lista-tarefas.vercel.app/listaTarefas',
     },
+    {
+      imagem: 'assets/jornadaMilhas.png',
+      titulo: 'Jornada Milhas',
+      subtitulo: 'Agência de viagens',
+      descricao:
+        'O projeto Jornada Milhas é uma aplicação Angular que simula o site de uma agência de viagens, exibindo destinos promocionais, depoimentos de clientes e imagens ilustrativas. Utiliza Angular Material, rotas e componentização para criar uma interface moderna, responsiva e bem estruturada.',
+      linkGithub: 'https://github.com/henriquelacerda00/alura-JornadaMilhas',
+      linkDeploy: 'https://alura-jornada-milhas.vercel.app/home',
+    },
     // pode adicionar mais cards aqui
+
   ];
+
+  cardsVisiveis = this.cards.map(() => signal(false));
+
+  ativarAnimacao() {
+    this.tituloVisivel.set(true);
+  }
+
+  ativarAnimacaoCard(index: number) {
+    this.cardsVisiveis[index].set(true);
+  }
 }
