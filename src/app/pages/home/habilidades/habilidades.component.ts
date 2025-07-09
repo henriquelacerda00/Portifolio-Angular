@@ -91,6 +91,10 @@ export class HabilidadesComponent {
       width: dialogWidth,
       height: dialogHeight,
       maxHeight: '90vh', // Adiciona uma altura máxima para evitar que o dialog seja muito grande
+      // Impede que o primeiro elemento focável (o botão) receba o foco
+      // automaticamente. Em vez disso, o foco vai para o próprio contêiner do
+      // dialog. Isso resolve o problema do "efeito de hover" no botão ao abrir.
+      autoFocus: 'dialog',
     });
   }
 }
