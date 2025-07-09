@@ -1,16 +1,101 @@
-html, body {
+html,
+body {
   min-height: 100vw;
   background: linear-gradient(to bottom, #040c24, #061268);
   background-repeat: no-repeat;
-  overflow-x: hidden; // ✅ impede scroll/corte horizontal
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif, "Lato", "Alumni Sans Pinstripe";
+  font-family: Roboto, "Helvetica Neue", sans-serif, "Lato",
+    "Alumni Sans Pinstripe";
+}
+
+/* Adicione este código em src/styles.scss */
+
+.custom-dialog-container .mat-mdc-dialog-surface {
+  background-color: #071c5c !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  color: white !important;
+}
+
+.custom-dialog-container h2[mat-dialog-title] {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+  color: white;
+}
+
+.custom-dialog-container .dialog-logo {
+  width: 25%;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.custom-dialog-container mat-dialog-content {
+  text-align: center;
+}
+
+.custom-dialog-container p {
+  font-size: 1rem;
+  color: white;
+}
+
+.custom-dialog-container mat-dialog-actions {
+  justify-content: center;
+}
+
+.custom-dialog-container button[mat-flat-button] {
+  background-color: #0e4cb3 !important;
+  color: white !important;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 0.6em 1.4em;
+}
+
+.custom-dialog-container button[mat-flat-button]:hover {
+  background-color: #0b3a8e !important;
+}
+
+/* Media Queries para o Dialog */
+
+/* Para tablets (até 1280px) */
+@media (max-width: 1280px) {
+  .custom-dialog-container h2[mat-dialog-title] {
+    font-size: 1.8em; /* Título um pouco menor */
+  }
+
+  .custom-dialog-container .dialog-logo {
+    width: 22%; /* Logo um pouco menor */
+  }
+
+  .custom-dialog-container p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Para celulares (até 768px, cobrindo o iPhone 12 Pro Max) */
+@media (max-width: 768px) {
+  .custom-dialog-container .mat-mdc-dialog-surface {
+    padding: 0.8rem !important; /* Menos preenchimento */
+  }
+
+  .custom-dialog-container h2[mat-dialog-title] {
+    font-size: 1.5em; /* Título menor */
+    margin-top: 0.8em;
+  }
+
+  .custom-dialog-container p {
+    font-size: 0.9rem; /* Texto menor */
+  }
 }

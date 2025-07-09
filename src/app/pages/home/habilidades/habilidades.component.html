@@ -1,10 +1,12 @@
 <section class="habilidades" id="habilidades">
-  <h1><strong>HABILIDADES:</strong></h1>
+  <div class="apresentacao">
+    <h1><strong>HABILIDADES:</strong></h1>
+    <p>clique nas tecnologias para mais informações</p>
+  </div>
   <app-container>
     <div class="habilidades-container">
       <button
         mat-stroked-button
-        color="primary"
         class="tech-button"
         *ngFor="let tecnologia of tecnologias"
         (click)="openDialog(tecnologia)"

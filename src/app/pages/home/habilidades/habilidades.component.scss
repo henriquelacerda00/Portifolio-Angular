@@ -1,22 +1,64 @@
 .habilidades {
   text-align: center;
-  h1 {
-    font-family: "Roboto";
-    font-size: 36px;
-    margin-bottom: 5rem;
-    color: rgb(13, 124, 228);
-    margin-top: 5vw;
+  margin-bottom: 5vw;
+
+  .apresentacao {
+    margin-bottom: 5em;
+
+    h1 {
+      font-family: "Roboto";
+      font-size: 36px;
+      color: rgb(13, 124, 228);
+      margin-top: 5vw;
+
+      @media (max-width: 600px) {
+        font-size: 28px;  // reduz tamanho do título no mobile
+        margin-top: 3vw;
+      }
+    }
+
+    p {
+      color: white;
+      font-size: 14px;
+
+      @media (max-width: 600px) {
+        font-size: 12px;  // texto menor no mobile
+      }
+    }
   }
+
   .habilidades-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; // permite quebra de linha se precisar
+
+    @media (max-width: 600px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      justify-items: center;
+    }
   }
 
   .tech-button {
     margin: 0.5rem;
     font-weight: 600;
     border-radius: 8px;
-  }
+    border: 2px solid #1224c4;  // corrigido para borda visível
+    color: white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 
+    &:hover {
+      background-color: #1224c4;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      width: 90%; // botão maior no mobile para facilitar toque
+    }
+  }
 }
