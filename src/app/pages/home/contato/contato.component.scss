@@ -1,0 +1,79 @@
+.contato {
+  margin-top: 20vw;
+  scroll-margin-top: 5vw;
+  h1 {
+    text-align: center;
+    color: rgb(13, 124, 228);
+    font-size: 36px;
+    margin-top: 5vw;
+    margin-bottom: 5rem;
+  }
+
+  .header {
+    color: white;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 1em;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    mat-form-field {
+      width: 40%;
+
+      /* Ajuste para telas menores */
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+
+      /*
+        Define as cores personalizadas para os campos do formulário,
+        garantindo contraste e harmonia com o tema escuro.
+      */
+      --mdc-outlined-text-field-input-text-color: #ffffff;
+      --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.7);
+      --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.5);
+      --mat-icon-color: #ffffff;
+
+      /* Cores para o estado de foco (quando o usuário clica no campo) */
+      --mdc-outlined-text-field-focus-label-text-color: #0d7ce4; /* Azul vibrante do título */
+      --mdc-outlined-text-field-focus-outline-color: #0d7ce4;
+      --mdc-outlined-text-field-caret-color: #0d7ce4; /* Cor do cursor (caret) */
+
+      /* Remove a alça de redimensionamento padrão do navegador do textarea */
+      textarea {
+        resize: none;
+      }
+    }
+
+    .submit-button {
+      margin-top: 1.5rem;
+      padding: 0.8em 2em;
+      background-color: #0d7ce4;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 5vw;
+      transition: background-color 0.3s ease-out;
+
+      &:hover:not(:disabled) {
+        background-color: #1a88f8; /* Um azul um pouco mais claro para o hover */
+      }
+
+      /* Estilos para quando o botão estiver desabilitado */
+      &:disabled {
+        background-color: #38465c; /* Um tom de azul mais escuro e sem saturação */
+        color: rgba(255, 255, 255, 0.5); /* Texto com menos destaque */
+        cursor: not-allowed;
+      }
+
+    }
+  }
+}

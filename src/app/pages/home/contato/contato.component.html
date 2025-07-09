@@ -1,0 +1,53 @@
+<section class="contato" id="contato">
+  <h1><strong>CONTATO:</strong></h1>
+  <div class="header">
+    <h2>Entre em contato</h2>
+    <p>
+      Estou sempre aberto a discutir novos projetos, ideias criativas ou
+      oportunidades. Sinta-se à vontade para me enviar uma mensagem —
+      responderei o mais rápido possível.
+    </p>
+  </div>
+  <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit($event)" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Digite seu nome" formControlName="nome" name="nome" />
+      <mat-icon matSuffix>contacts</mat-icon>
+      <mat-error *ngIf="formulario.get('nome')?.hasError('required')">
+        O nome é obrigatório.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Digite seu e-mail" formControlName="email" name="email" type="email"/>
+      <mat-icon matSuffix>mail</mat-icon>
+      <mat-error *ngIf="formulario.get('email')?.hasError('required')">
+        O e-mail é obrigatório.
+      </mat-error>
+      <mat-error *ngIf="formulario.get('email')?.hasError('email')">
+        Formato de e-mail inválido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mensagem</mat-label>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="5"
+        placeholder="Deixe sua mensagem aqui..."
+        formControlName="mensagem"
+        name="mensagem"
+      ></textarea>
+      <mat-icon matSuffix>message</mat-icon>
+      <mat-error *ngIf="formulario.get('mensagem')?.hasError('required')">
+        A mensagem é obrigatória.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button class="submit-button" type="submit" [disabled]="formulario.invalid">
+      ENVIAR MENSAGEM
+    </button>
+  </form>
+</section>

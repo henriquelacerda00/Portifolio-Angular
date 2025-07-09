@@ -4,11 +4,12 @@ import { MATERIAL_MODULES } from '../../shared/material/material-imports';
 import { InfoComponent } from './info/info.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { HabilidadesComponent } from './habilidades/habilidades.component';
+import { ContatoComponent } from "./contato/contato.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ContainerComponent, MATERIAL_MODULES , InfoComponent, ProjetosComponent , HabilidadesComponent],
+  imports: [ContainerComponent, MATERIAL_MODULES, InfoComponent, ProjetosComponent, HabilidadesComponent, ContatoComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

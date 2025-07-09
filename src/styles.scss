@@ -1,7 +1,7 @@
 html,
 body {
   min-height: 100vw;
-  background: linear-gradient(to bottom, #040c24, #061268);
+  background: linear-gradient(to bottom, #040d27, #081466);
   background-repeat: no-repeat;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -17,6 +17,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif, "Lato",
     "Alumni Sans Pinstripe";
+
 }
 
 /* Adicione este código em src/styles.scss */
@@ -99,3 +100,4 @@ body {
     font-size: 0.9rem; /* Texto menor */
   }
 }
+
