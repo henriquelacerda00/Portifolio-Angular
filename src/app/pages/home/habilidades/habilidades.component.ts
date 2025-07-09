@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MATERIAL_MODULES } from '../../../shared/material/material-imports';
 import { ContainerComponent } from '../../../shared/container/container.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogElementsExampleDialog } from '../../../shared/dialog-elements/dialog-elements.component';
+import { IntersectionDirective } from '../../../shared/directives/intersection.directive';
+import { fadeInUp } from '../../../shared/animations/animations';
 
 @Component({
   selector: 'app-habilidades',
@@ -14,11 +16,14 @@ import { DialogElementsExampleDialog } from '../../../shared/dialog-elements/dia
     MATERIAL_MODULES,
     ContainerComponent,
     DialogElementsExampleDialog,
+    IntersectionDirective,
   ],
   templateUrl: './habilidades.component.html',
   styleUrl: './habilidades.component.scss',
+  animations: [fadeInUp],
 })
 export class HabilidadesComponent {
+  habilidadesVisivel = signal(false);
   constructor(
     public dialog: MatDialog,
     private breakpointObserver: BreakpointObserver
@@ -62,6 +67,10 @@ export class HabilidadesComponent {
       imagem: 'assets/git-logo.png',
     },
   ];
+
+  ativarAnimacaoHabilidades(): void {
+    this.habilidadesVisivel.set(true);
+  }
 
   openDialog(tecnologia: any): void {
     const isMobile = this.breakpointObserver.isMatched('(max-width: 768px)');

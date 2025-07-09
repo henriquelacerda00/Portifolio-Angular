@@ -1,4 +1,8 @@
-<section class="habilidades" id="habilidades">
+<section
+  class="habilidades"
+  id="habilidades"
+  [@fadeInUp]="habilidadesVisivel() ? 'visible' : 'hidden'"
+  (intersection)="ativarAnimacaoHabilidades()">
   <div class="apresentacao">
     <h1><strong>HABILIDADES:</strong></h1>
     <p>clique nas tecnologias para mais informações</p>
