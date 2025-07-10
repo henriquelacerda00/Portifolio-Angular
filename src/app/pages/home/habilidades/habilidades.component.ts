@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { MATERIAL_MODULES } from '../../../shared/material/material-imports';
 import { ContainerComponent } from '../../../shared/container/container.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -22,12 +22,23 @@ import { fadeInUp } from '../../../shared/animations/animations';
   styleUrl: './habilidades.component.scss',
   animations: [fadeInUp],
 })
-export class HabilidadesComponent {
+export class HabilidadesComponent implements OnInit {
   habilidadesVisivel = signal(false);
   constructor(
     public dialog: MatDialog,
     private breakpointObserver: BreakpointObserver
   ) {}
+
+  ngOnInit(): void {
+    this.preloadImages();
+  }
+
+  private preloadImages(): void {
+    this.tecnologias.forEach((tecnologia) => {
+      const img = new Image();
+      img.src = tecnologia.imagem;
+    });
+  }
 
   tecnologias = [
     {
