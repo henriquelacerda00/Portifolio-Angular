@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { MATERIAL_MODULES } from './shared/material/material-imports';
 import { HeaderComponent } from "./shared/header/header.component";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterOutlet,
     MATERIAL_MODULES,
     HeaderComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
