@@ -46,7 +46,7 @@ export class HabilidadesComponent {
       nome: 'JavaScript',
       descricao:
         'JavaScript é a linguagem de programação usada para adicionar interatividade às páginas web. Com ela, é possível criar elementos dinâmicos como menus, formulários interativos, animações e atualizações de conteúdo sem recarregar a página. Funciona em todos os navegadores modernos e é essencial no desenvolvimento front-end, sendo frequentemente usado com HTML e CSS para criar experiências web ricas e responsivas.',
-      imagem: 'assets/javascript-logo.png',
+      imagem: 'assets/JS-logo.png',
     },
     {
       nome: 'HTML',
