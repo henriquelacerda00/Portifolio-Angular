@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { MATERIAL_MODULES } from '../../../shared/material/material-imports';
 import { ContainerComponent } from '../../../shared/container/container.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -26,11 +26,14 @@ export class HabilidadesComponent implements OnInit {
   habilidadesVisivel = signal(false);
   constructor(
     public dialog: MatDialog,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
+    if(isPlatformBrowser(this.platformId)) {
     this.preloadImages();
+    }
   }
 
   private preloadImages(): void {

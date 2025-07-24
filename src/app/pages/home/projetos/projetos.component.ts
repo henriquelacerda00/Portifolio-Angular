@@ -62,6 +62,15 @@ export class ProjetosComponent {
       linkGithub: 'https://github.com/henriquelacerda00/alura-JornadaMilhas',
       linkDeploy: 'https://alura-jornada-milhas.vercel.app/home',
     },
+    {
+      imagem: 'assets/deleite.png',
+      titulo: 'Deleite',
+      subtitulo: 'e-commerce',
+      descricao:
+        'Uma aplicação com renderização via SSR (Server-Side Rendering), integração com Supabase para acesso ao banco de dados, e foco em performance com hidratação de componentes e hidratação incremental.',
+      linkGithub: 'https://github.com/henriquelacerda00/Alura-Deleite',
+      linkDeploy: 'https://alura-deleite-angular.vercel.app',
+    },
     // pode adicionar mais cards aqui
 
   ];
